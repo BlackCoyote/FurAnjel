@@ -78,6 +78,8 @@ namespace FurAnjel
                 // Configure the game backend to be this GameInternal object.
                 Backend = this
             };
+
+            GL.Enable(EnableCap.DepthTest);
             // Load your game!
             Game.Load();
         }
@@ -111,6 +113,7 @@ namespace FurAnjel
         {
             // Clear the back buffer for fresh drawing!
             GL.ClearBuffer(ClearBuffer.Color, 0, new float[] { 0, 0, 0, 1 });
+            GL.ClearBuffer(ClearBuffer.Depth, 0, new float[] { 1 });
             // Bind the primary shader.
             GL.UseProgram(Primary_Shader);
             // Default color of white

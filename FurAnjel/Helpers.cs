@@ -23,29 +23,99 @@ namespace FurAnjel
         public static int CreateBoxVBO()
         {
             // generate a set of coordinates for the box: two triangles.
-            Vector3[] Poses = new Vector3[6]
+            Vector3[] Poses = new Vector3[36]
             {
                 new Vector3(0, 0, 0),
                 new Vector3(1, 0, 0),
                 new Vector3(1, 1, 0),
                 new Vector3(0, 0, 0),
                 new Vector3(1, 1, 0),
-                new Vector3(0, 1, 0)
+                new Vector3(0, 1, 0),
+
+                new Vector3(0, 0, 1),
+                new Vector3(1, 0, 1),
+                new Vector3(1, 1, 1),
+                new Vector3(0, 0, 1),
+                new Vector3(1, 1, 1),
+                new Vector3(0, 1, 1),
+                
+                new Vector3(0, 0, 0),
+                new Vector3(0, 0, 1),
+                new Vector3(0, 1, 1),
+                new Vector3(0, 0, 0),
+                new Vector3(0, 1, 1),
+                new Vector3(0, 1, 0),
+
+                new Vector3(1, 0, 0),
+                new Vector3(1, 0, 1),
+                new Vector3(1, 1, 1),
+                new Vector3(1, 0, 0),
+                new Vector3(1, 1, 1),
+                new Vector3(1, 1, 0),
+
+                new Vector3(0, 0, 0),
+                new Vector3(1,0,0),
+                new Vector3(1,0,1),
+                new Vector3(0,0,0),
+                new Vector3(1,0,1),
+                new Vector3(0,0,1),
+
+                new Vector3(0,1,0),
+                new Vector3(1,1,0),
+                new Vector3(1,1,1),
+                new Vector3(0,1,0),
+                new Vector3(1,1,1),
+                new Vector3(0,1,1),
             };
             // generate a set of texture coordinates for the box.
-            Vector2[] TCs = new Vector2[6]
+            Vector2[] TCs = new Vector2[36]
             {
                 new Vector2(0, 0),
                 new Vector2(1, 0),
                 new Vector2(1, 1),
                 new Vector2(0, 0),
                 new Vector2(1, 1),
-                new Vector2(0, 1)
+                new Vector2(0, 1),
+                
+                new Vector2(0, 0),
+                new Vector2(1, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 1),
+
+                new Vector2(0, 0),
+                new Vector2(1, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 1),
+
+                new Vector2(0, 0),
+                new Vector2(1, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 1),
+
+                new Vector2(0, 0),
+                new Vector2(1, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 1),
+
+                new Vector2(0, 0),
+                new Vector2(1, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 0),
+                new Vector2(1, 1),
+                new Vector2(0, 1),
             };
             // Generate the indices (lazily).
-            uint[] Indices = new uint[6]
+            uint[] Indices = new uint[36]
             {
-                0, 1, 2, 3, 4, 5
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
             };
             // Ensure no Vertex Array is bound!
             GL.BindVertexArray(0);
